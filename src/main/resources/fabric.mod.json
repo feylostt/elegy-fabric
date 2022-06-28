@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.lemon.inspirations.Inspirations"
+      "net.lemon.inspirations.common.Inspirations"
     ]
   },
   "mixins": [
