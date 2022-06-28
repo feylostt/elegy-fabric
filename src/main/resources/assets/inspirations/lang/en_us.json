@@ -1,5 +1,34 @@
 {
+  "itemGroup.inspirations.inspirations": "Inspirations",
+
   "item.inspirations.amethyst_wand": "Amethyst Wand",
   "item.inspirations.quartz_wand": "Quartz Wand",
-  "item.inspirations.ender_wand": "Ender Wand"
+  "item.inspirations.ender_wand": "Ender Wand",
+
+  "item.inspirations.lightning_spell_item": "Lightning Spell",
+  "spell.inspirations.lightning.name": "Lightning",
+  "spell.inspirations.lightning.description": "Allows the user to summon lightning",
+
+  "item.inspirations.infected_dart_spell_item": "Infected Dart Spell",
+  "spell.inspirations.infected_dart.name": "Infected Dart",
+  "spell.inspirations.infected_dart.description": "Allows the user to conjure an arrow tipped with their current effects",
+
+  "item.inspirations.natures_touch_spell_item": "Nature's Touch Spell",
+  "spell.inspirations.natures_touch.name": "Nature's Touch",
+  "spell.inspirations.natures_touch.description": "Allows the user to quickly grow crops",
+
+  "item.inspirations.douse_spell_item": "Douse Spell",
+  "spell.inspirations.douse.name": "Douse",
+  "spell.inspirations.douse.description": "Allows the user to gain fire resistance for a minute",
+
+  "item.inspirations.fireball_spell_item": "Fireball Spell",
+  "spell.inspirations.fireball.name": "Fireball",
+  "spell.inspirations.fireball.description": "Allows the user to conjure a fireball that they can hit to launch",
+
+  "item.inspirations.teleport_spell_item": "Teleport Spell",
+  "spell.inspirations.teleport.name": "Teleport",
+  "spell.inspirations.teleport.description": "Allows the user to teleport",
+
+  "death.attack.infection": "%1$s got infected by their own poison dart",
+  "death.attack.infection.player": "%1$s got infected by their own poison dart whilst fighting %2$s"
 }

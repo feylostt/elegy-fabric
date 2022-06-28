@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "inspirations:item/infected_dart_spell_item"
+  }
+}

@@ -1,5 +1,6 @@
 package net.lemon.inspirations.common.item;
 
+import net.lemon.inspirations.common.Inspirations;
 import net.lemon.inspirations.common.registry.InspirationsSpells;
 import net.lemon.inspirations.common.spells.Spell;
 import net.minecraft.client.item.TooltipContext;
@@ -9,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
@@ -40,14 +42,15 @@ public class WandItem extends Item {
             case END -> sound = SoundEvents.ENTITY_ENDERMAN_TELEPORT;
         }
 
-        Spell currentSpell = InspirationsSpells.SPELLS.get(user.getStackInHand(hand).getNbt().getString("inspirations.current_spell"));
+        Spell currentSpell = InspirationsSpells.SPELLS.get(user.getStackInHand(hand).getNbt().getString(Inspirations.MOD_ID + ".current_spell"));
 
-        if(currentSpell == null) {
+        if(currentSpell == null || user.totalExperience < currentSpell.getExpCost()) {
             return super.use(world, user, hand);
         }
 
         if (!world.isClient) {
             currentSpell.useSpell(world, user);
+            user.addExperience(-currentSpell.getExpCost());
         }
 
         user.playSound(sound, 1.0F, 1.0F);
@@ -64,8 +67,9 @@ public class WandItem extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if(stack.hasNbt()) {
-            String currentSpell = stack.getNbt().getString("inspirations.current_spell");
-            tooltip.add(Text.translatable(currentSpell));
+            String currentSpell = stack.getNbt().getString(Inspirations.MOD_ID + ".current_spell");
+            tooltip.add(Text.translatable("spell." + Inspirations.MOD_ID + "." + currentSpell + ".name")
+                    .formatted(Formatting.DARK_PURPLE, Formatting.ITALIC));
         }
     }
 

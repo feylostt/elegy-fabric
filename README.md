@@ -1,9 +1,5 @@
-# Fabric Example Mod
+# Inspirations
 
-## Setup
+**Inspirations** is a Minecraft mod that adds a more magical aspect to the game, including wands, spells, potion effects, and more!
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+Explore the world to uncover the magic forgotten!

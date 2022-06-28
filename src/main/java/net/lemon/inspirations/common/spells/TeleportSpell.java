@@ -2,17 +2,19 @@ package net.lemon.inspirations.common.spells;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
+import net.minecraft.entity.passive.FoxEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
-import static net.minecraft.util.hit.HitResult.Type;
-
-public class LightningSpell extends Spell {
-
-    public LightningSpell(int cooldown, int expCost, SpellType type, String name) {
+public class TeleportSpell extends Spell {
+    public TeleportSpell(int cooldown, int expCost, SpellType type, String name) {
         super(cooldown, expCost, type, name);
     }
 
@@ -21,13 +23,12 @@ public class LightningSpell extends Spell {
         Vec3d eyePos = user.getEyePos();
         BlockHitResult raycast = world.raycast(new RaycastContext(eyePos, eyePos.add(user.getRotationVector().multiply(64)), RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, user));
 
-        if(raycast.getType() != Type.MISS) {
+        if(raycast.getType() != HitResult.Type.MISS) {
             Vec3d target = raycast.getPos();
 
-            LightningEntity lightningEntity = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
-            lightningEntity.setPos(target.getX(), target.getY(), target.getZ());
-
-            world.spawnEntity(lightningEntity);
+            user.teleport(target.getX(), target.getY(), target.getZ());
+            SoundEvent soundEvent = SoundEvents.ITEM_CHORUS_FRUIT_TELEPORT;
+            world.playSound((PlayerEntity)null, user.getX(), user.getY(), user.getZ(), soundEvent, SoundCategory.PLAYERS, 1.0F, 1.0F);
         }
     }
 }

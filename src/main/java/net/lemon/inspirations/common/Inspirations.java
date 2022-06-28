@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItem;
 import net.lemon.inspirations.common.registry.InspirationsItems;
 import net.lemon.inspirations.common.registry.InspirationsSpells;
+import net.lemon.inspirations.common.registry.InspirationsStatusEffects;
 import net.lemon.inspirations.common.spells.Spell;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -33,6 +34,7 @@ public class Inspirations implements ModInitializer {
 
 		InspirationsItems.registerModItems();
 		InspirationsSpells.registerSpells();
+		InspirationsStatusEffects.registerStatusEffects();
 	}
 
 	@SuppressWarnings("unchecked")
