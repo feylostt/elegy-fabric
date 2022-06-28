@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  Q",
+    " S ",
+    "S  "
+  ],
+  "key": {
+    "A": {
+      "tag": "minecraft:quartz"
+    },
+    "S": {
+      "tag": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "inspirations:quartz_wand",
+    "count": 1
+  }
+}

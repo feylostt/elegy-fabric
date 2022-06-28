@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  A",
+    " S ",
+    "S  "
+  ],
+  "key": {
+    "A": {
+      "tag": "minecraft:amethyst_shard"
+    },
+    "S": {
+      "tag": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "inspirations:amethyst_wand",
+    "count": 1
+  }
+}
