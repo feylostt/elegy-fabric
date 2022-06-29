@@ -2,9 +2,13 @@ package net.lemon.inspirations.common.registry;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.lemon.inspirations.common.Inspirations;
+import net.lemon.inspirations.common.item.RitualKnifeItem;
 import net.lemon.inspirations.common.item.SpellItem;
 import net.lemon.inspirations.common.item.WandItem;
+import net.lemon.inspirations.common.material.RitualToolMaterial;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -33,6 +37,11 @@ public class InspirationsItems {
 
     public static final Item TELEPORT_SPELL_ITEM = registerItem("teleport_spell_item",
             new SpellItem(new FabricItemSettings().group(Inspirations.MOD_GROUP), InspirationsSpells.TELEPORT));
+
+    // Tools
+    public static final Item RITUAL_KNIFE_ITEM = registerItem("ritual_knife",
+            new RitualKnifeItem(RitualToolMaterial.INSTANCE, 4, -2.4F,
+            new Item.Settings().group(Inspirations.MOD_GROUP)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(Inspirations.MOD_ID, name), item);
